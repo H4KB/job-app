@@ -1,7 +1,4 @@
-"use client";
-
-import { ChakraProvider, GlobalStyle } from "@chakra-ui/react";
-import { theme } from "@/config/theme";
+import { AppProvider } from "@/providers/app";
 import "./globals.css";
 
 export const metadata = {
@@ -14,10 +11,5 @@ export default function RootLayout({
 }: {
   children: React.ReactNode;
 }) {
-  return (
-    <ChakraProvider theme={theme}>
-      <GlobalStyle />
-      {children}
-    </ChakraProvider>
-  );
+  return <AppProvider>{children}</AppProvider>;
 }
