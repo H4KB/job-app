@@ -39,7 +39,7 @@ export const Link = ({
 }: LinkProps) => {
   return (
     <NextLink shallow={shallow} href={href} passHref>
-      <Button leftIcon={icon} as="a" {...variants[variant]}>
+      <Button leftIcon={icon} {...variants[variant]}>
         {children}
       </Button>
     </NextLink>
