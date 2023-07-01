@@ -3,7 +3,7 @@ import { Job } from "../../types";
 import { DataTable, DataTableProps } from "@/components/data-tabel";
 import { Box } from "@chakra-ui/react";
 
-type JobListType = "dashbord" | "public";
+type JobListType = "dashboard" | "public";
 
 export type JobsListProps = {
   type: JobListType;
