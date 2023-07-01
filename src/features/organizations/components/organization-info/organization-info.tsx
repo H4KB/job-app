@@ -20,8 +20,8 @@ export const OrganizationInfo = ({ organization }: OrganizationInfoProps) => {
           w={{ base: "full", md: "auto" }}
           direction={{ base: "column", md: "row" }}
         >
-          <InfoCard label={organization.email} value={organization.email} />
-          <InfoCard label={organization.phone} value={organization.phone} />
+          <InfoCard label="Email" value={organization.email} />
+          <InfoCard label="Phone number" value={organization.phone} />
         </Stack>
       </Stack>
 
