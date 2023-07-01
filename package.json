@@ -32,5 +32,8 @@
   "devDependencies": {
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2"
+  },
+  "msw": {
+    "workerDirectory": "public"
   }
 }
