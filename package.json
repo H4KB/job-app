@@ -32,6 +32,7 @@
     "typescript": "5.0.4"
   },
   "devDependencies": {
+    "@mswjs/data": "^0.13.0",
     "husky": "^8.0.0",
     "lint-staged": "^13.2.2"
   },
