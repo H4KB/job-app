@@ -21,7 +21,7 @@ export const CreateJobForm = ({ onSuccess }: CreateJobFormProps) => {
 
         <InputField type="textarea" label="Info" />
 
-        <Button isDisable={false} isLoading={false} type="submit">
+        <Button isDisabled={false} isLoading={false} type="submit">
           Create
         </Button>
       </Stack>

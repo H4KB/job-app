@@ -22,7 +22,7 @@ export type ButtonProps = {
   type?: "button" | "submit" | "reset";
   variant?: keyof typeof variants;
   isLoading?: boolean;
-  isDisable?: boolean;
+  isDisabled?: boolean;
   onClicke?: MouseEventHandler<HTMLButtonElement>;
   icon?: JSX.Element;
 };
