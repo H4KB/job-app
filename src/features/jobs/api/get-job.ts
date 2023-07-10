@@ -1,11 +1,12 @@
 import { apiClient } from "@/lib/api-client";
 import { useQuery } from "@tanstack/react-query";
+import { Job } from "../types";
 
 type GetJobOptions = {
   jobId: string;
 };
 
-export const getJob = ({ jobId }: GetJobOptions) => {
+export const getJob = ({ jobId }: GetJobOptions): Promise<Job> => {
   return apiClient.get(`/jobs/${jobId}`);
 };
 
