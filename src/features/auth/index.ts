@@ -5,5 +5,6 @@ export * from "./api/get-auth-user";
 
 // component
 export * from "./components/protected";
+export * from "./components/login-form";
 
 export * from "./types";
