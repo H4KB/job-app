@@ -1,8 +1,7 @@
 import { NotFound } from "@/components/not-found";
 import { Seo } from "@/components/seo";
 import { JobsList, Job, getJobs } from "@/features/jobs";
-import { getOrganization } from "@/features/organizations";
-import { OrganizationInfo } from "@/features/organizations/components/organization-info";
+import { getOrganization, OrganizationInfo } from "@/features/organizations";
 import { PublicLayout } from "@/layouts/public-layout";
 import { Heading, Stack } from "@chakra-ui/react";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";

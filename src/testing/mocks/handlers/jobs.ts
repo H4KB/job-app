@@ -14,7 +14,7 @@ const getJobsHandler = rest.get(`${API_URL}/jobs`, async (req, res, ctx) => {
 const getJobHandler = rest.get(
   `${API_URL}/jobs/:jobId`,
   async (req, res, ctx) => {
-    const jobId = req.url.searchParams.get("jobId") as string;
+    const jobId = req.params.jobId as string;
     const job = db.job.findFirst({
       where: { id: { equals: jobId } },
     });
@@ -23,7 +23,7 @@ const getJobHandler = rest.get(
       return res(
         ctx.delay(300),
         ctx.status(404),
-        ctx.json({ message: "Not fount!" })
+        ctx.json({ message: "Not found!" })
       );
     }
     return res(ctx.delay(300), ctx.status(200), ctx.json(job));

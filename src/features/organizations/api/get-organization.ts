@@ -9,12 +9,12 @@ type GetOrganizationOptions = {
 export const getOrganization = ({
   organizationId,
 }: GetOrganizationOptions): Promise<Organization> => {
-  return apiClient.get(`organization/${organizationId}`);
+  return apiClient.get(`/organizations/${organizationId}`);
 };
 
 export const useOrganization = ({ organizationId }: GetOrganizationOptions) => {
   const { data, isLoading } = useQuery({
-    queryKey: ["organization", organizationId],
+    queryKey: ["organizations", organizationId],
     queryFn: () => getOrganization({ organizationId }),
   });
   return { data, isLoading };

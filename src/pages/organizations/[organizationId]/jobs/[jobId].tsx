@@ -56,5 +56,5 @@ export const getServerSideProps = async ({
     getOrganization({ organizationId }).catch(() => null),
     getJob({ jobId }).catch(() => null),
   ]);
-  return { props: { organization, job } };
+  return { props: { job, organization } };
 };

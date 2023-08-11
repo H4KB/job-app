@@ -8,7 +8,7 @@ type CreateJobOptions = {
 };
 
 export const createJob = ({ data }: CreateJobOptions): Promise<Job> => {
-  return apiClient.post("/job", data);
+  return apiClient.post("/jobs", data);
 };
 
 type useCreateJobOptions = {
