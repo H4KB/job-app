@@ -7,6 +7,7 @@ import { ErrorBoundary } from "react-error-boundary";
 import { QueryClientProvider } from "@tanstack/react-query";
 import { queryClient } from "@/lib/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { Notification } from "@/components/notification";
 
 type AppProviderProps = {
   children: ReactNode;
@@ -20,6 +21,7 @@ export const AppProvider = ({ children }: AppProviderProps) => {
         onError={console.error}
       >
         <GlobalStyle />
+        <Notification />
         <QueryClientProvider client={queryClient}>
           <ReactQueryDevtools initialIsOpen={false} />
           {children}
