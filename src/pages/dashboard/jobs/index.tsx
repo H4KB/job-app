@@ -1,16 +1,18 @@
 import { Link } from "@/components/link";
 import { Loading } from "@/components/loading";
 import { Seo } from "@/components/seo";
-import { JobsList } from "@/features/jobs";
+import { JobsList, useJobs } from "@/features/jobs";
 import { DashBoardLayout } from "@/layouts/dashboard-layout";
-import { useJobs, useUser } from "@/testing/test-data";
+import { useUser } from "@/testing/test-data";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 import { HStack, Heading } from "@chakra-ui/react";
 import { ReactElement } from "react";
 
 const DashBoardPage = () => {
   const user = useUser();
-  const jobs = useJobs(user.data?.organizationId ?? "");
+  const jobs = useJobs({
+    params: { organizationId: user.data?.organizationId ?? "" },
+  });
   if (jobs.isLoading) return <Loading />;
   if (!user.data) return null;
 

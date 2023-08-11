@@ -1,9 +1,9 @@
 import { NotFound } from "@/components/not-found";
 import { Seo } from "@/components/seo";
-import { JobsList, Job } from "@/features/jobs";
+import { JobsList, Job, getJobs } from "@/features/jobs";
+import { getOrganization } from "@/features/organizations";
 import { OrganizationInfo } from "@/features/organizations/components/organization-info";
 import { PublicLayout } from "@/layouts/public-layout";
-import { getJobs, getOrganization } from "@/testing/test-data";
 import { Heading, Stack } from "@chakra-ui/react";
 import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
 import { ReactElement } from "react";
@@ -42,8 +42,10 @@ export const getServerSideProps = async ({
 }: GetServerSidePropsContext) => {
   const organizationId = params?.organizationId as string;
   const [organization, jobs] = await Promise.all([
-    getOrganization(organizationId).catch(() => null),
-    getJobs(organizationId).catch(() => [] as Job[]),
+    getOrganization({ organizationId }).catch(() => null),
+    getJobs({ params: { organizationId: organizationId } }).catch(
+      () => [] as Job[]
+    ),
   ]);
   return { props: { organization, jobs } };
 };
