@@ -1,9 +1,8 @@
 import { Link } from "@/components/link";
-import { Loading } from "@/components/loading";
 import { Seo } from "@/components/seo";
 import { JobsList, useJobs } from "@/features/jobs";
 import { DashBoardLayout } from "@/layouts/dashboard-layout";
-import { useUser } from "@/testing/test-data";
+import { useUser } from "@/features/auth";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 import { HStack, Heading } from "@chakra-ui/react";
 import { ReactElement } from "react";
@@ -13,7 +12,7 @@ const DashBoardPage = () => {
   const jobs = useJobs({
     params: { organizationId: user.data?.organizationId ?? "" },
   });
-  if (jobs.isLoading) return <Loading />;
+
   if (!user.data) return null;
 
   return (
