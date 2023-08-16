@@ -17,26 +17,28 @@ export type NotificationStore = {
   dismissNotification: (id: string) => void;
 };
 
-export const notificationStore = createStore<NotificationStore>((set, get) => ({
-  notifications: [],
-  showNotification: (notification) => {
-    const id = uid();
-    set((state) => ({
-      notifications: [...state.notifications, { id, ...notification }],
-    }));
-    if (notification.duration) {
-      setTimeout(() => {
-        get().dismissNotification(id);
-      }, notification.duration);
-    }
-  },
-  dismissNotification: (id) => {
-    set((state) => ({
-      notifications: state.notifications.filter(
-        (notification) => notification.id !== id
-      ),
-    }));
-  },
-}));
+export const notificationsStore = createStore<NotificationStore>(
+  (set, get) => ({
+    notifications: [],
+    showNotification: (notification) => {
+      const id = uid();
+      set((state) => ({
+        notifications: [...state.notifications, { id, ...notification }],
+      }));
+      if (notification.duration) {
+        setTimeout(() => {
+          get().dismissNotification(id);
+        }, notification.duration);
+      }
+    },
+    dismissNotification: (id) => {
+      set((state) => ({
+        notifications: state.notifications.filter(
+          (notification) => notification.id !== id
+        ),
+      }));
+    },
+  })
+);
 
-export const useNotifications = () => useStore(notificationStore);
+export const useNotifications = () => useStore(notificationsStore);
