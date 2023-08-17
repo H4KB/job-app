@@ -1,13 +1,14 @@
 "use client";
 
 import { ChakraProvider, GlobalStyle } from "@chakra-ui/react";
-import { ReactNode } from "react";
-import { theme } from "@/config/theme";
-import { ErrorBoundary } from "react-error-boundary";
 import { QueryClientProvider } from "@tanstack/react-query";
-import { queryClient } from "@/lib/react-query";
 import { ReactQueryDevtools } from "@tanstack/react-query-devtools";
+import { ReactNode } from "react";
+import { ErrorBoundary } from "react-error-boundary";
+
 import { Notification } from "@/components/notification";
+import { theme } from "@/config/theme";
+import { queryClient } from "@/lib/react-query";
 
 type AppProviderProps = {
   children: ReactNode;

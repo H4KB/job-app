@@ -14,13 +14,13 @@ describe("notifications store", () => {
     notificationsStore.getState().showNotification(notification);
 
     expect(notificationsStore.getState().notifications).toContainEqual(
-      notification
+      notification,
     );
 
     notificationsStore.getState().dismissNotification(notification.id);
 
     expect(notificationsStore.getState().notifications).not.toContainEqual(
-      notification
+      notification,
     );
   });
 });

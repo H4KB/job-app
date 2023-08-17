@@ -1,5 +1,7 @@
-import { API_URL } from "@/config/constants";
 import { rest } from "msw";
+
+import { API_URL } from "@/config/constants";
+
 import { AUTH_COOKIE, authenticate, requireAuth } from "../utils";
 
 const loginHandler = rest.post(
@@ -10,9 +12,9 @@ const loginHandler = rest.post(
     return res(
       ctx.delay(300),
       ctx.cookie(AUTH_COOKIE, jwt, { path: "/", httpOnly: true }),
-      ctx.json({ user })
+      ctx.json({ user }),
     );
-  }
+  },
 );
 
 const logoutHandler = rest.post(
@@ -21,9 +23,9 @@ const logoutHandler = rest.post(
     return res(
       ctx.delay(300),
       ctx.cookie(AUTH_COOKIE, "", { path: "/", httpOnly: true }),
-      ctx.json({ success: true })
+      ctx.json({ success: true }),
     );
-  }
+  },
 );
 
 const meHandler = rest.get(`${API_URL}/auth/me`, async (req, res, ctx) => {

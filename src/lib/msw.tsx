@@ -1,8 +1,9 @@
+import { MSWDevTools } from "msw-devtools";
+import { ReactNode } from "react";
+
 import { IS_DEVELOPMENT } from "@/config/constants";
 import { db } from "@/testing/mocks/db";
 import { handlers } from "@/testing/mocks/handlers";
-import { MSWDevTools } from "msw-devtools";
-import { ReactNode } from "react";
 
 export type MSWWrapperPorps = {
   children: ReactNode;

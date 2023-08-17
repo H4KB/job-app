@@ -1,5 +1,7 @@
-import { API_URL } from "@/config/constants";
 import { rest } from "msw";
+
+import { API_URL } from "@/config/constants";
+
 import { authHandler } from "./auth";
 import { jobsHander } from "./jobs";
 import { organizationsHandler } from "./organizations";

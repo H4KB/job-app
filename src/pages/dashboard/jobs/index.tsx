@@ -1,11 +1,12 @@
-import { Link } from "@/components/link";
-import { Seo } from "@/components/seo";
-import { JobsList, useJobs } from "@/features/jobs";
-import { DashBoardLayout } from "@/layouts/dashboard-layout";
-import { useUser } from "@/features/auth";
 import { PlusSquareIcon } from "@chakra-ui/icons";
 import { HStack, Heading } from "@chakra-ui/react";
 import { ReactElement } from "react";
+
+import { Link } from "@/components/link";
+import { Seo } from "@/components/seo";
+import { useUser } from "@/features/auth";
+import { JobsList, useJobs } from "@/features/jobs";
+import { DashBoardLayout } from "@/layouts/dashboard-layout";
 
 const DashBoardPage = () => {
   const user = useUser();

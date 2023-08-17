@@ -1,6 +1,7 @@
+import Axios from "axios";
+
 import { API_URL } from "@/config/constants";
 import { notificationsStore } from "@/stores/notifications";
-import Axios from "axios";
 
 export const apiClient = Axios.create({
   baseURL: API_URL,
@@ -24,5 +25,5 @@ apiClient.interceptors.response.use(
     });
 
     return Promise.reject(error);
-  }
+  },
 );

@@ -1,7 +1,9 @@
-import { Link } from "@/components/link";
-import { Job } from "../../types";
-import { DataTable, DataTableProps } from "@/components/data-tabel";
 import { Box } from "@chakra-ui/react";
+
+import { DataTable, DataTableProps } from "@/components/data-tabel";
+import { Link } from "@/components/link";
+
+import { Job } from "../../types";
 
 type JobListType = "dashboard" | "public";
 

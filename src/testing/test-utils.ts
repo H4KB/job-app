@@ -1,7 +1,8 @@
-import { ReactElement } from "react";
 import { render, screen, waitFor, within } from "@testing-library/react";
-import { AppProvider } from "@/providers/app";
 import userEvent from "@testing-library/user-event";
+import { ReactElement } from "react";
+
+import { AppProvider } from "@/providers/app";
 import { Entity } from "@/types";
 
 export const appRender = (ui: ReactElement) => {
@@ -39,7 +40,7 @@ export const waitForLoadingToFinish = () => {
       ];
       loaders.forEach((loader) => expect(loader).not.toBeInDocument());
     },
-    { timeout: 4000 }
+    { timeout: 4000 },
   );
 };
 

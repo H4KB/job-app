@@ -1,11 +1,12 @@
+import { Button, Stack } from "@chakra-ui/react";
+import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
+import { ReactElement } from "react";
+
 import { NotFound } from "@/components/not-found";
 import { Seo } from "@/components/seo";
 import { PublicJobInfo, getJob } from "@/features/jobs";
 import { getOrganization } from "@/features/organizations";
 import { PublicLayout } from "@/layouts/public-layout";
-import { Button, Stack } from "@chakra-ui/react";
-import { GetServerSidePropsContext, InferGetServerSidePropsType } from "next";
-import { ReactElement } from "react";
 
 type PublicJobPageProps = InferGetServerSidePropsType<
   typeof getServerSideProps

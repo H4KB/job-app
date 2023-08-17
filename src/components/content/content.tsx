@@ -1,5 +1,4 @@
 import { Box } from "@chakra-ui/react";
-import exp from "constants";
 
 export type ContentProps = {
   children: string;

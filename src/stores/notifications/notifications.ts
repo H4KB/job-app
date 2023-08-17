@@ -1,5 +1,6 @@
-import { uid } from "@/utils/uid";
 import { createStore, useStore } from "zustand";
+
+import { uid } from "@/utils/uid";
 
 export type NotificationType = "info" | "warning" | "success" | "error";
 
@@ -34,11 +35,11 @@ export const notificationsStore = createStore<NotificationStore>(
     dismissNotification: (id) => {
       set((state) => ({
         notifications: state.notifications.filter(
-          (notification) => notification.id !== id
+          (notification) => notification.id !== id,
         ),
       }));
     },
-  })
+  }),
 );
 
 export const useNotifications = () => useStore(notificationsStore);

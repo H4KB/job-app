@@ -1,5 +1,6 @@
-import { Notification, NotificationType } from "@/stores/notifications";
 import { Box, CloseButton, Stack, Text } from "@chakra-ui/react";
+
+import { Notification, NotificationType } from "@/stores/notifications";
 
 const notificationVariants: Record<NotificationType, { color: string }> = {
   info: {

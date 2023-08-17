@@ -1,7 +1,9 @@
-import { apiClient } from "@/lib/api-client";
-import { AuthUser, LoginData } from "../types";
 import { useMutation } from "@tanstack/react-query";
+
+import { apiClient } from "@/lib/api-client";
 import { queryClient } from "@/lib/react-query";
+
+import { AuthUser, LoginData } from "../types";
 
 export const login = (data: LoginData): Promise<{ user: AuthUser }> => {
   return apiClient.post("/auth/login", data);

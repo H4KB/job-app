@@ -1,5 +1,7 @@
-import { useNotifications } from "@/stores/notifications";
 import { Box, Flex } from "@chakra-ui/react";
+
+import { useNotifications } from "@/stores/notifications";
+
 import { NotificationToast } from "./notificationToast";
 
 export const Notification = () => {

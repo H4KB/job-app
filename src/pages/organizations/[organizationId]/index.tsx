@@ -1,11 +1,12 @@
+import { Heading, Stack } from "@chakra-ui/react";
+import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
+import { ReactElement } from "react";
+
 import { NotFound } from "@/components/not-found";
 import { Seo } from "@/components/seo";
 import { JobsList, Job, getJobs } from "@/features/jobs";
 import { getOrganization, OrganizationInfo } from "@/features/organizations";
 import { PublicLayout } from "@/layouts/public-layout";
-import { Heading, Stack } from "@chakra-ui/react";
-import { InferGetServerSidePropsType, GetServerSidePropsContext } from "next";
-import { ReactElement } from "react";
 
 type PublicOrganizationPageProps = InferGetServerSidePropsType<
   typeof getServerSideProps
@@ -43,7 +44,7 @@ export const getServerSideProps = async ({
   const [organization, jobs] = await Promise.all([
     getOrganization({ organizationId }).catch(() => null),
     getJobs({ params: { organizationId: organizationId } }).catch(
-      () => [] as Job[]
+      () => [] as Job[],
     ),
   ]);
   return { props: { organization, jobs } };

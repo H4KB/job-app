@@ -1,6 +1,7 @@
+import { Center, Heading, Text, VStack } from "@chakra-ui/react";
+
 import { Link } from "@/components/link";
 import { Seo } from "@/components/seo/seo";
-import { Center, Heading, Text, VStack } from "@chakra-ui/react";
 
 const LandingPage = () => {
   return (

@@ -1,7 +1,9 @@
 import { Heading, Stack } from "@chakra-ui/react";
-import { Organization } from "../../types";
-import { InfoCard } from "@/components/info-card";
+
 import { Content } from "@/components/content";
+import { InfoCard } from "@/components/info-card";
+
+import { Organization } from "../../types";
 
 type OrganizationInfoProps = {
   organization: Organization;

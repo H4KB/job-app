@@ -1,8 +1,10 @@
+import { Flex } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { ReactNode, useEffect } from "react";
-import { useUser } from "../../api/get-auth-user";
-import { Flex } from "@chakra-ui/react";
+
 import { Loading } from "@/components/loading";
+
+import { useUser } from "../../api/get-auth-user";
 
 export type ProtectedProps = {
   children: ReactNode;

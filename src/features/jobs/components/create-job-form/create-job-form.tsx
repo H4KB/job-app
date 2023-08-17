@@ -1,9 +1,10 @@
 import { Box, Stack } from "@chakra-ui/react";
+import { useForm } from "react-hook-form";
 
 import { Button } from "@/components/button";
 import { InputField } from "@/components/form";
+
 import { useCreateJob } from "../../api/create-job";
-import { useForm } from "react-hook-form";
 import { CreateJobData } from "../../types";
 
 export type CreateJobFormProps = {

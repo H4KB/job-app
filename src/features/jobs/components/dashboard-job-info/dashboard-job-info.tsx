@@ -1,6 +1,8 @@
 import { Box, HStack, Heading, Text, VStack } from "@chakra-ui/react";
-import { Job } from "../../types";
+
 import { Content } from "@/components/content";
+
+import { Job } from "../../types";
 
 export const DashboardJobInfo = ({ job }: { job: Job }) => {
   return (

@@ -1,5 +1,7 @@
-import { API_URL } from "@/config/constants";
 import { rest } from "msw";
+
+import { API_URL } from "@/config/constants";
+
 import { db } from "../db";
 import { requireAuth } from "../utils";
 
@@ -23,11 +25,11 @@ const getJobHandler = rest.get(
       return res(
         ctx.delay(300),
         ctx.status(404),
-        ctx.json({ message: "Not found!" })
+        ctx.json({ message: "Not found!" }),
       );
     }
     return res(ctx.delay(300), ctx.status(200), ctx.json(job));
-  }
+  },
 );
 
 const createJobHandler = rest.post(`${API_URL}/jobs`, async (req, res, ctx) => {

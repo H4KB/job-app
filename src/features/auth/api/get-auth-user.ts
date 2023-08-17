@@ -1,6 +1,8 @@
-import { apiClient } from "@/lib/api-client";
-import { AuthUser } from "../types";
 import { useQuery } from "@tanstack/react-query";
+
+import { apiClient } from "@/lib/api-client";
+
+import { AuthUser } from "../types";
 
 export const getAuthUser = (): Promise<AuthUser> => {
   return apiClient.get("/auth/me");

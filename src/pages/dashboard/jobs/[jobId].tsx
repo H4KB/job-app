@@ -1,10 +1,11 @@
+import { useRouter } from "next/router";
+import { ReactElement } from "react";
+
 import { Loading } from "@/components/loading";
 import { NotFound } from "@/components/not-found";
 import { Seo } from "@/components/seo";
 import { DashboardJobInfo, useJob } from "@/features/jobs";
 import { DashBoardLayout } from "@/layouts/dashboard-layout";
-import { useRouter } from "next/router";
-import { ReactElement } from "react";
 
 const DashboardJobPage = () => {
   const router = useRouter();

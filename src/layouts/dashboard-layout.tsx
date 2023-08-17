@@ -1,9 +1,10 @@
-import { Link } from "@/components/link";
-import { useLogout, useUser, Protected } from "@/features/auth";
 import { InfoOutlineIcon } from "@chakra-ui/icons";
 import { Box, Button, Container, Flex, HStack } from "@chakra-ui/react";
 import { useRouter } from "next/router";
 import { ReactNode } from "react";
+
+import { Link } from "@/components/link";
+import { useLogout, useUser, Protected } from "@/features/auth";
 
 type DashBoardLayoutProps = {
   children: ReactNode;

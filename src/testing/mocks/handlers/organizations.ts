@@ -1,5 +1,7 @@
-import { API_URL } from "@/config/constants";
 import { rest } from "msw";
+
+import { API_URL } from "@/config/constants";
+
 import { db } from "../db";
 
 const getOrganizationHandler = rest.get(
@@ -14,12 +16,12 @@ const getOrganizationHandler = rest.get(
       return res(
         ctx.delay(300),
         ctx.status(404),
-        ctx.json({ message: "Not Found!" })
+        ctx.json({ message: "Not Found!" }),
       );
     }
 
     return res(ctx.delay(300), ctx.status(200), ctx.json(organization));
-  }
+  },
 );
 
 export const organizationsHandler = [getOrganizationHandler];

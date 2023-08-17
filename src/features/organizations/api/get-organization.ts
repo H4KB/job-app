@@ -1,6 +1,8 @@
-import { apiClient } from "@/lib/api-client";
-import { Organization } from "../types";
 import { useQuery } from "@tanstack/react-query";
+
+import { apiClient } from "@/lib/api-client";
+
+import { Organization } from "../types";
 
 type GetOrganizationOptions = {
   organizationId: string;

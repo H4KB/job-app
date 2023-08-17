@@ -1,11 +1,11 @@
-import type { AppProps } from "next/app";
 import { NextPage } from "next";
-
-import { AppProvider } from "@/providers/app";
-import { ReactElement, ReactNode } from "react";
+import type { AppProps } from "next/app";
 import dynamic from "next/dynamic";
-import { MSWWrapperPorps } from "@/lib/msw";
+import { ReactElement, ReactNode } from "react";
+
 import { API_MOCKING } from "@/config/constants";
+import { MSWWrapperPorps } from "@/lib/msw";
+import { AppProvider } from "@/providers/app";
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -15,7 +15,7 @@ type AppPropsWithLayout = AppProps & {
 };
 
 const MSWWrapper = dynamic<MSWWrapperPorps>(() =>
-  import("@/lib/msw").then(({ MSWWrapper }) => MSWWrapper)
+  import("@/lib/msw").then(({ MSWWrapper }) => MSWWrapper),
 );
 
 const App = ({ Component, pageProps }: AppPropsWithLayout) => {

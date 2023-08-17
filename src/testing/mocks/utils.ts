@@ -1,7 +1,10 @@
-import { AuthUser } from "@/features/auth";
-import { db } from "./db";
 import { RestRequest } from "msw";
+
 import { IS_TEST } from "@/config/constants";
+import { AuthUser } from "@/features/auth";
+
+import { db } from "./db";
+
 import { testData } from "../test-data";
 
 const AUTH_TOKEN = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9";

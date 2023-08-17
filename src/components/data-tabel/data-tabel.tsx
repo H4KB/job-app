@@ -1,5 +1,3 @@
-import { Entity } from "@/types";
-import { Loading } from "../loading";
 import {
   Box,
   Center,
@@ -11,6 +9,10 @@ import {
   Thead,
   Tr,
 } from "@chakra-ui/react";
+
+import { Entity } from "@/types";
+
+import { Loading } from "../loading";
 
 type DataTableColumn<Entry> = {
   title: string;

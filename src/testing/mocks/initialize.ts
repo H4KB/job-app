@@ -1,4 +1,5 @@
 import { IS_SERVER } from "@/config/constants";
+
 import { seedDb } from "./seed-db";
 
 const initializeMocks = async () => {
